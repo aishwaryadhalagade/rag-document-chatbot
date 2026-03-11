@@ -1,0 +1,76 @@
+
+
+py -3.11 -m venv venv
+
+venv\Scripts\activate
+
+python --version
+
+python -m pip install --upgrade pip
+
+pip install fastapi==0.110.0
+pip install uvicorn==0.29.0
+pip install numpy==1.26.4
+pip install pydantic==2.7.1
+pip install langchain==0.1.16
+pip install langchain-community==0.0.33
+pip install langchain-openai==0.1.3
+pip install faiss-cpu==1.7.4
+pip install pypdf==4.2.0
+pip install streamlit==1.33.0
+pip install python-dotenv==1.0.1
+pip install tiktoken==0.6.0
+pip install requests
+pip install xxhash
+pip install python-multipart
+pip show python-multipart
+
+cd backend
+
+uvicorn main:app --reload
+
+Open browser - http://127.0.0.1:8000/docs
+
+cd frontend
+
+streamlit run app.py
+
+
+
+
+
+Terminal 1 (Backend)
+
+Open terminal and run:
+
+venv\Scripts\activate
+
+You should see:
+
+(venv) C:\Users\Aishwarya Dhalgade\Rag-document-chatbot>
+
+Now start backend:
+
+cd backend
+uvicorn main:app --reload
+Terminal 2 (Frontend)
+
+Open new terminal in Visual Studio Code.
+
+Activate environment again:
+
+venv\Scripts\activate
+
+Then run:
+
+cd frontend
+streamlit run app.py
+
+
+
+
+
+
+
+
+

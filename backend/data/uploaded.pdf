@@ -1,0 +1,745 @@
+In Detail: 
+
+🟦 1. SUPERVISED LEARNING
+You know the input (X) and output (Y).
+ Used for prediction.
+Two types:
+A. Regression (Y is continuous)
+B. Classification (Y is categorical)
+Let’s break them down.
+
+🔵 1A. REGRESSION ALGORITHMS (Predict continuous numerical values
+✅ 1. Linear Regression
+📌 Predicts a continuous number based on linear relationship.
+How it works: Fits a straight line by minimizing squared error.
+Use When: Trend appears linear, few features.
+Avoid When:
+Non-linear patterns
+Many outliers
+Multicollinearity
+Examples: House prices, sales forecast.
+✅ 2. Polynomial Regression
+📌 Extension of linear regression that fits curves.
+Use When: relationship between X and Y is non-linear.
+✅ 3. Ridge Regression (L2 Regularization)
+📌 Penalizes large coefficients → reduces overfitting.
+Use When:
+Multicollinearity
+Need stable coefficients
+
+✅ 4. Lasso Regression (L1 Regularization)
+📌 Does feature selection by pushing coefficients to 0.
+Use When:
+Want to select important features
+High dimensional data
+✅ 5. Elastic Net Regression
+📌 Combination of Ridge + Lasso.
+Use:
+When the dataset has both correlated & irrelevant features.
+✅ 6. Decision Tree Regression
+📌 Splits data into regions based on rules. Bases on if else statement
+Use: Non-linear relationships, easy interpretation.
+✅ 7. Random Forest Regression
+📌 Ensemble of many trees → stable & accurate.
+Use:
+Complex relationships
+Need high accuracy
+
+✅ 8. Gradient Boosting Regression (XGBoost, LightGBM, CatBoost)
+📌 Sequentially improves model by reducing previous errors.
+Use:
+Best performance for tabular data
+Complex feature interactions
+
+✅ 9. SVR (Support Vector Regression)
+📌 Uses margin-based approach for regression.
+Use:
+High-dimensional data
+Small/medium datasets
+
+REGRESSION SUMMARY
+Great for predicting:
+Sales
+Demand
+Prices
+Revenue
+Temperature
+Time duration
+
+
+
+🔵 1B. CLASSIFICATION ALGORITHMS (Predict categories/labels)
+
+✅ 1. Logistic Regression
+📌 Predicts probability of a class (0/1).
+Use:
+Churn
+Fraud
+Spam
+
+✅ 2. K-Nearest Neighbors (KNN)
+📌 Classifies based on nearest neighbors.
+Use:
+Small dataset
+When classes are non-linear
+
+✅ 3. Decision Tree Classifier
+📌 Easy to interpret, handles non-linearity.
+✅ 4. Random Forest Classifier
+📌 Highly accurate, handles noise & overfitting.
+✅ 5. Gradient Boosting Classifier (XGBoost, LightGBM, CatBoost)
+📌 Best performance in classification tasks.
+✅ 6. Support Vector Machine (SVM)
+📌 Effective when classes are well-separated.
+✅ 7. Naive Bayes
+📌 What it is
+Naive Bayes is a probabilistic classification algorithm based on Bayes’ Theorem, with the “naive” assumption that all features are independent of each other.
+Despite this unrealistic assumption, it works extremely well for high-dimensional data, especially text.
+Use:
+Text classification
+NLP sentiment analysis
+
+CLASSIFICATION SUMMARY
+Used for:
+Fraud detection
+Customer churn
+Spam detection
+Medical diagnosis
+Credit approval
+
+
+
+
+🟩 2. UNSUPERVISED LEARNING
+No labeled outputs.
+ Used for finding hidden patterns/structures.
+Two main areas:
+A. Clustering
+B. Dimensionality Reduction
+
+🟢 2A. CLUSTERING ALGORITHMS
+
+✅ 1. K-Means Clustering
+📌 Groups data into K clusters based on similarity.
+How it works:
+Chooses K centroids
+Assigns points to closest centroid
+Recalculates centroids
+Use:
+Customer segmentation
+Pattern discovery
+Avoid:
+Non-spherical clusters
+Outliers
+
+✅ 2. Hierarchical Clustering
+📌 Builds a tree (dendrogram) of clusters.
+Use:
+Small datasets
+Want to visualize cluster hierarchy
+
+
+
+
+✅ 3. DBSCAN (Density-Based Spatial Clustering)
+📌 Finds clusters based on density; detects noise.
+Use:
+Geospatial data
+Finding anomalies
+Irregular shapes
+Avoid:
+High-dimensional data
+Varying densities
+
+✅ 4. Gaussian Mixture Models (GMM)
+📌 Probabilistic clustering assuming data comes from Gaussian distributions.
+Use:
+Soft clustering (probabilities)
+Overlapping clusters
+
+CLUSTERING SUMMARY
+Used for:
+Customer segments
+Fraud pattern discovery
+Image grouping
+Anomaly detection
+
+🟢 2B. DIMENSIONALITY REDUCTION
+
+✅ 1. PCA (Principal Component Analysis)
+When you want to reduce dimensions while preserving maximum variance
+When your features have multicollinearity
+When you need faster model training on high-dimensional numerical data
+When you need 2D/3D visualization of high-dimensional data
+
+
+
+✅ 2. t-SNE
+When you want to visually explore clusters in high-dimensional data
+When relationships are non-linear
+When working with embeddings, images, NLP vectors, or any complex feature space
+When the goal is visualization only, not model training
+
+✅ 3. UMAP
+When you want t-SNE-level visualization but much faster
+When you’re working with very large datasets
+When preserving global + local structure is important
+When generating embeddings for downstream ML tasks
+
+🟧 3. SEMI-SUPERVISED LEARNING
+Mixture of labeled + unlabeled data.
+ Useful when labeling is expensive.
+
+Algorithms include:
+Pseudo-labeling
+Semi-supervised SVM
+Graph-based models
+Use Cases:
+Medical data (few labels)
+Speech recognition
+Web content classification
+
+
+
+
+🟥 4. REINFORCEMENT LEARNING
+Agents learn by interacting with the environment → rewards and penalties.
+Key Algorithms:
+Q-Learning
+Deep Q Networks (DQN)
+Policy Gradients
+Actor-Critic Models
+Use:
+Robotics
+Self-driving cars
+Recommendation systems
+Game AI
+
+📘 Traditional NLP Algorithms
+1. Bag of Words (BoW)
+Converts text into a vector of word counts.
+Ignore word order.
+Simple baseline for text classification and spam detection.
+2. TF-IDF
+Weights words by importance:
+Frequent in the document
+Rare in the full corpus
+Reduces impact of common stopwords ("the", "is").
+Used for search ranking, text similarity, classification.
+3. N-grams
+Captures word sequences (bi-grams, tri-grams).
+Adds context such as “not good”.
+Improves over BoW by including word order.
+
+📘 Embedding Models
+1. Word2Vec
+Learn dense vector embeddings based on context.
+Words appearing in similar contexts have similar vectors.
+Two architectures: CBOW and Skip-Gram.
+2. GloVe
+Embeddings trained using global co-occurrence statistics.
+Better captures global structure than Word2Vec.
+3. FastText
+Consider subword information (character n-grams).
+Handles rare words and misspellings better.
+Great for languages with rich morphology.
+
+📘 Deep Learning Models (Sequential)
+1. RNN (Recrrent Neural Network)
+Learn sequence data by maintaining hidden state.
+Struggles with long-distance dependencies.
+2. LSTM
+RNN variant with memory cells + gates.
+Solves vanishing gradient problem.
+Good for text, time series, sequences.
+3. GRU
+Simplified LSTM (fewer gates).
+Faster training, similar performance.
+Used in NLP and sequence modeling.
+
+📘 Transformer Models
+1. BERT
+Bidirectional transformer encoder.
+Excellent for classification, NER, QA.
+Learn context from both directions.
+2. GPT
+Decoder-only transformer.
+Great for text generation, summarization, and dialogue.
+3. RoBERTa
+Optimized BERT with more training and data.
+State-of-the-art for many NLP tasks.
+4. T5
+Text-to-text transformer:
+Converts every task into text → text.
+Very flexible across NLP tasks.
+
+🟧 6. Time Series Models
+📈 1. Classical Statistical Models
+AR (AutoRegressive)
+Forecasts using past values.
+Example: today = a × yesterday + error.
+MA (Moving Average)
+Forecasts using past errors.
+ARIMA
+Combines AR + MA + differencing.
+Good for non-stationary data.
+SARIMA
+ARIMA + seasonality.
+Handles weekly/monthly/annual patterns.
+ETS (Error, Trend, Seasonality)
+Decomposes time series into 3 components.
+Very interpretable.
+
+📈 2. ML-Based Models
+Random Forest for Time Series
+Trains on lag features (t-1, t-2, etc.).
+Handles non-linear patterns well.
+XGBoost
+Great for complex patterns.
+Fast, accurate, widely used for competitions.
+
+📈 3. Deep Learning Models
+LSTM
+Learn long-term patterns in time series.
+Used for demand forecasting, stock prediction.
+GRU
+Faster LSTM alternative.
+Transformers for Forecasting
+Captures long-range dependencies better than LSTM.
+Works well for multi-step and multivariate forecasting.
+
+🟪 7. Anomaly Detection Algorithms
+1. Isolation Forest
+Isolates anomalies by randomly splitting data.
+Anomalies get isolated in fewer splits.
+Works great for high-dimensional data.
+2. One-Class SVM
+Learn a boundary around normal data.
+Points outside boundary = anomalies.
+
+3. Autoencoders
+Neural network that reconstructs input.
+Anomalies have high reconstruction error.
+4. DBSCAN
+Density-based clustering.
+Points in low-density areas = anomalies.
+Good for spatial/cluster data.
+5. Z-score Based
+Statistical method:
+If a point is far from mean (in terms of standard deviations) → anomaly.
+Works for simple numeric data.
+Use Cases
+Fraud detection
+Network intrusion
+Sensor anomaly / machine failure
+Outlier detection in financial transactions
+Healthcare anomaly detection
+
+
+
+Model Selection
+1️⃣ NUMERIC → Regression Models
+Use when predicting continuous numbers.
+✔ When data is linear
+Linear Regression
+ Use when relationships follow a straight line.
+✔ When data is nonlinear
+Polynomial Regression
+Decision Tree Regressor
+
+
+Random Forest Regressor
+Gradient Boosting / XGBoost / LightGBM
+✔ When data is large, and accuracy matters
+XGBoost / CatBoost (best for Kaggle tabular data)
+Neural Networks (if lots of features and nonlinearity)
+✔ When features are correlated
+Ridge / Lasso Regression
+2️⃣ CATEGORICAL → Classification Models
+✔ Binary classification (Yes/No)
+Logistic Regression
+SVM
+Random Forest
+XGBoost
+Neural Networks
+✔ Multi-class classification (3+ classes)
+Random Forest
+XGBoost
+KNN
+Naïve Bayes (text data)
+Neural Networks
+
+
+✔ High-dimensional text classification
+Naïve Bayes
+Logistic Regression
+Transformer models (BERT)
+⭐ STEP 2 — Is Your Data Sequential / Time-based?
+
+3️⃣ Time-Series Models
+If your data has a timestamp and ordering matters:
+✔ Classical models
+ARIMA / SARIMA
+ETS
+Holt-Winters
+✔ Machine Learning based
+XGBoost
+Random Forest
+✔ Deep Learning
+LSTM
+GRU
+Temporal CNN
+Transformers (Time-Series Transformers)
+
+
+⭐ STEP 3 — No Target Variable → Unsupervised Learning
+4️⃣ Unsupervised Models — No Labels
+✔ Clustering
+Use when grouping similar data:
+K-Means
+Hierarchical Clustering
+DBSCAN (non-spherical clusters; noise in data)
+✔ Dimensionality Reduction
+Use to reduce features or visualize:
+PCA
+t-SNE
+UMAP
+✔ Anomaly Detection
+Isolation Forest
+One-Class SVM
+Autoencoders
+
+⭐ STEP 4 — Data Type Specific Models
+5️⃣ Text Data → NLP Models
+✔ Basic models
+TF-IDF + Logistic Regression
+Naïve Bayes
+✔ Semantic models
+Word2Vec
+GloVe
+✔ Deep models
+LSTMs/GRUs
+Transformers (BERT, GPT-like models)
+Use for:
+Sentiment analysis
+Text classification
+Named entity recognition
+Question answering
+
+6️⃣ Image Data → Computer Vision Models
+✔ Basic CNNs
+LeNet
+AlexNet
+VGG
+✔ Modern models
+ResNet
+EfficientNet
+Vision Transformers (ViT)
+Use for:
+Image classification
+
+
+Detection (YOLO, Faster RCNN)
+Segmentation (UNet)
+
+7️⃣ Graph Data → Graph ML Models
+When using networks/relationships:
+Graph Neural Networks (GNNs)
+Node2Vec
+Knowledge Graph Embeddings
+Use for:
+Fraud detection
+Recommendation systems
+Social networks
+Knowledge graph reasoning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cheet Sheet (short)
+🟦 1. SUPERVISED LEARNING
+A. Regression (Predicting continuous values)
+✔ Linear Regression
+Use when:
+Relationship is linear
+Need explainability
+Data is clean + not too large
+
+
+✔ Ridge / Lasso / ElasticNet
+Use when:
+You have many correlated features
+Need feature selection (Lasso)
+Want regularization to prevent overfitting
+
+
+✔ Decision Tree Regression
+Use when:
+Non-linear relationships
+Want interpretability
+✔ Random Forest Regression
+Use when:
+Complex non-linear patterns
+Need strong baseline model
+
+
+
+
+✔ XGBoost / LightGBM / CatBoost
+Use when:
+Highest accuracy needed
+Tabular structured data
+Handles missing values + complex interactions
+
+
+✔ SVR (Support Vector Regression)
+Use when:
+Small dataset
+Need robust model against outliers
+B. Classification (Predicting categories)
+✔ Logistic Regression
+Use when:
+Baseline model
+Interpretability is crucial
+Linear decision boundary
+✔ Naive Bayes
+Use when:
+Text classification / NLP
+High-dimensional data
+Fast training needed
+✔ KNN
+Use when:
+Very small datasets
+Non-linear boundaries
+No training time needed
+
+
+✔ Decision Tree Classification
+Use when:
+Want easy interpretation
+Non-linear separability
+
+
+✔ Random Forest / Extra Trees
+Use when:
+Need accuracy + robustness
+Data with noise & many features
+✔ XGBoost / LightGBM / CatBoost
+Use when:
+Best accuracy for tabular classification
+Competitions / banking / credit scoring
+✔ SVM
+Use when:
+Data is moderately sized
+Clear margin of separation
+High-dimensional data
+✔ Neural Networks / MLP
+Use when:
+Complex non-linear patterns
+Need flexible model
+
+
+
+
+🟩 2. UNSUPERVISED LEARNING
+A. Clustering
+✔ K-Means
+Use when:
+Data is continuous
+Clusters are spherical & separated
+Data is large
+✔ Hierarchical Clustering
+Use when:
+Small datasets
+Need dendrogram / cluster hierarchy
+✔ DBSCAN
+Use when:
+Clusters are irregular shapes
+Need anomaly detection
+Want noise handling
+✔ Gaussian Mixture Models (GMM)
+Use when:
+Soft clustering needed (probabilistic)
+Clusters overlap
+
+B. Dimensionality Reduction
+✔ PCA
+Use when:
+Need speed-up
+Reduce multicollinearity
+Visualization
+
+
+✔ t-SNE
+Use when:
+Visualize high-dimensional embeddings
+Non-linear structure
+Small datasets (slow)
+✔ UMAP
+Use when:
+t-SNE–like visualization but faster
+Large datasets
+
+🟧 3. NLP MODEL SELECTION
+A. Text Preprocessing / Traditional NLP
+✔ BoW / TF-IDF / N-grams
+Use when:
+Simple text problems
+Small datasets
+Interpretability needed
+
+B. Embedding Models
+✔ Word2Vec
+Use when:
+Need semantic meaning of words
+Train custom embeddings
+✔ GloVe
+Use when:
+Want globally learned embeddings
+
+
+✔ FastText
+Use when:
+Many rare words / misspellings
+Rich morphology languages (Hindi, Tamil)
+
+C. Deep Learning Models
+✔ RNN
+Use when:
+Short sequences
+Simple tasks
+✔ LSTM / GRU
+Use when:
+Longer sequences
+Time dependency matters
+Text classification, translation, seq2seq
+
+D. Transformer Models
+✔ BERT / RoBERTa
+Use when:
+Classification
+NER
+Question answering
+Sentence embeddings
+✔ GPT
+Use when:
+Text generation
+Summarization
+Chatbots
+Creative content
+
+
+✔ T5
+Use when:
+Unified text-to-text tasks
+Translation, summarization, QA
+🟪 4. ANOMALY DETECTION
+✔ Z-score / IQR
+Use when:
+Simple numeric data
+Quick statistical baseline
+✔ Isolation Forest
+Use when:
+High-dimensional data
+Generic outlier detection
+✔ One-Class SVM
+Use when:
+Boundary-based anomaly detection
+Smaller datasets
+✔ Autoencoders
+Use when:
+Complex patterns
+Time-series anomalies
+Sensor failures
+✔ DBSCAN
+Use when:
+Density-based anomaly finding
+Spatial/scatter anomalies
+
+🟨 5. RECOMMENDER SYSTEMS
+✔ Collaborative Filtering (User–User, Item–Item)
+Use when:
+User-item interaction data available
+✔ Matrix Factorization (SVD)
+Use when:
+Sparse recommendation matrices
+✔ Deep Learning Recommenders
+Use when:
+Large-scale data
+Deep personalization
+
+🟫 6. TIME SERIES MODEL SELECTION
+A. Classical Models
+✔ ARIMA
+Use when:
+No strong seasonality
+Single variable
+✔ SARIMA
+Use when:
+Strong seasonality
+Repeating patterns (daily/weekly/monthly)
+
+
+
+✔ ETS
+Use when:
+Trend + seasonality
+Need interpretability
+
+B. ML-Based Models
+✔ XGBoost / Random Forest
+Use when:
+Multivariate time series
+Lag features
+Complex interactions
+
+C. Deep Learning
+✔ LSTM / GRU
+Use when:
+Long historical patterns
+Multivariate forecasting
+✔ Temporal Convolutional Networks
+Use when:
+Faster alternative to LSTM
+
+
+✔ Transformers
+Use when:
+Very long sequences
+High-dimensional signals
+Multi-step forecasting
+
+
+🟩 7. COMPUTER VISION (BONUS)
+✔ CNN
+Use when:
+Image classification
+
+
+✔ ResNet / EfficientNet
+Use when:
+High accuracy needed
+Deep networks
+
+
+✔ UNet
+Use when:
+Image segmentation
+Medical imaging
+
+
+✔ YOLO / Faster R-CNN
+Use when:
+Object detection
+Real-time applications
