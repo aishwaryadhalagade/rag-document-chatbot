@@ -109,6 +109,7 @@ Activate environment
 Windows
 
 venv\Scripts\activate
+
 2. Installing Required Libraries
 
 The required libraries for AI processing, document parsing, API development, and frontend interface were installed.
@@ -126,6 +127,7 @@ BeautifulSoup
 Install dependencies using:
 
 pip install -r requirements.txt
+
 3. API Key Configuration
 
 An OpenAI API key is required for generating embeddings and responses.
@@ -156,6 +158,7 @@ uvicorn main:app --reload
 Backend runs at:
 
 http://127.0.0.1:8000
+
 5. Document Processing
 
 Once a user uploads a document, the system performs the following operations:
