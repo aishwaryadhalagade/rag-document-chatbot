@@ -92,31 +92,6 @@ Project Structure:
 
 The project follows a modular structure separating backend logic and frontend interface.
 
-AI Document Assistant
-│
-├── backend
-
-│   ├── API server
-
-│   ├── RAG pipeline
-
-│   ├── document loader
-
-│   ├── vector database logic
-│
-├── frontend
-
-│   └── Streamlit web application
-│
-├── documents
-
-│   └── uploaded document storage
-│
-├── .env
-
-│   └── API keys
-│
-└── requirements.txt
 Development Workflow
 
 The project was developed through several stages, including environment setup, backend development, AI pipeline integration, and frontend implementation.
