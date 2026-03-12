@@ -95,18 +95,25 @@ The project follows a modular structure separating backend logic and frontend in
 AI Document Assistant
 │
 ├── backend
+
 │   ├── API server
+
 │   ├── RAG pipeline
+
 │   ├── document loader
+
 │   ├── vector database logic
 │
 ├── frontend
+
 │   └── Streamlit web application
 │
 ├── documents
+
 │   └── uploaded document storage
 │
 ├── .env
+
 │   └── API keys
 │
 └── requirements.txt
